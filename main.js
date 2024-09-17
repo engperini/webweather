@@ -15,8 +15,9 @@ fetchWeatherButton.addEventListener('click', fetchWeather);
 //automatic fetchWeather every minute
 setInterval(fetchWeather, 60000);
 
-//fetchWeather 1st time
-fetchWeather();
+//fetchWeather 1st time after 2 seconds after page loads
+setTimeout(fetchWeather, 2000);
+
 
 
 function fetchWeather() {
