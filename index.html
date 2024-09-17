@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Weather</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Current City Weather</h1>
+    
+    <div id="weatherCards" class="weather-cards">
+      <div class="weather-card">
+        <i class="fas fa-temperature-high"></i>
+        <p>Temperature: <span id="temperature"></span> °C</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-tint"></i>
+        <p>Relative Humidity: <span id="humidity"></span> %</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-sun"></i>
+        <p>Is Day: <span id="isDay"></span></p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-cloud-rain"></i>
+        <p>Precipitation: <span id="precipitation"></span> mm</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-cloud-showers-heavy"></i>
+        <p>Rain: <span id="rain"></span> mm</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-cloud"></i>
+        <p>Cloud Cover: <span id="cloudCover"></span> %</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-tachometer-alt"></i>
+        <p>Pressure: <span id="pressure"></span> hPa</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-wind"></i>
+        <p>Wind Speed: <span id="windSpeed"></span> km/h</p>
+      </div>
+      <div class="weather-card">
+        <i class="fas fa-location-arrow"></i>
+        <p>Wind Direction: <span id="windDirection"></span> °</p>
+      </div>
+    </div>
+    <div id="locationTime" class="location-time"></div>
+    <br>
+    <button id="fetchWeather" class="btn">Update Weather</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
