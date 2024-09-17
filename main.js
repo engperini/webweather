@@ -15,6 +15,9 @@ fetchWeatherButton.addEventListener('click', fetchWeather);
 //automatic fetchWeather every minute
 setInterval(fetchWeather, 60000);
 
+//fetchWeather 1st time
+fetchWeather();
+
 
 function fetchWeather() {
   const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=-23.1864&longitude=-46.8842&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,weather_code,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m&timezone=America%2FSao_Paulo';
