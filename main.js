@@ -10,6 +10,9 @@ const windSpeedElement = document.getElementById('windSpeed');
 const windDirectionElement = document.getElementById('windDirection');
 const locationTimeDiv = document.getElementById('locationTime');
 
+
+
+
 fetchWeatherButton.addEventListener('click', fetchWeather);
 
 //automatic fetchWeather every minute
