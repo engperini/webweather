@@ -1,16 +1,13 @@
 const fetchWeatherButton = document.getElementById('fetchWeather');
 const temperatureElement = document.getElementById('temperature');
 const humidityElement = document.getElementById('humidity');
-const isDayElement = document.getElementById('isDay');
-const precipitationElement = document.getElementById('precipitation');
-const rainElement = document.getElementById('rain');
+
 const cloudCoverElement = document.getElementById('cloudCover');
 const pressureElement = document.getElementById('pressure');
 const windSpeedElement = document.getElementById('windSpeed');
 const windDirectionElement = document.getElementById('windDirection');
 const locationTimeDiv = document.getElementById('locationTime');
-
-
+const digitalClock = document.getElementById('digitalClock'); // Adicione um elemento com id "digitalClock" no seu HTML
 
 
 fetchWeatherButton.addEventListener('click', fetchWeather);
@@ -21,6 +18,18 @@ setInterval(fetchWeather, 60000);
 //fetchWeather 1st time after 2 seconds after page loads
 setTimeout(fetchWeather, 2000);
 
+// Função para atualizar o relógio digital
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const timeString = `${hours}:${minutes}`;
+  digitalClock.textContent = timeString;
+}
+
+// Chama a função updateClock a cada segundo
+setInterval(updateClock, 1000);
 
 
 function fetchWeather() {
@@ -34,9 +43,6 @@ function fetchWeather() {
       // Update card content
       temperatureElement.textContent = currentWeather.temperature_2m;
       humidityElement.textContent = currentWeather.relative_humidity_2m;
-      isDayElement.textContent = currentWeather.is_day ? 'Yes' : 'No';
-      precipitationElement.textContent = currentWeather.precipitation;
-      rainElement.textContent = currentWeather.rain;
       cloudCoverElement.textContent = currentWeather.cloud_cover;
       pressureElement.textContent = currentWeather.pressure_msl;
       windSpeedElement.textContent = currentWeather.wind_speed_10m;
@@ -50,9 +56,6 @@ function fetchWeather() {
       console.error('Error fetching weather data:', error);
       temperatureElement.textContent = 'Error';
       humidityElement.textContent = 'Error';
-      isDayElement.textContent = 'Error';
-      precipitationElement.textContent = 'Error';
-      rainElement.textContent = 'Error';
       cloudCoverElement.textContent = 'Error';
       pressureElement.textContent = 'Error';
       windSpeedElement.textContent = 'Error';
