@@ -2,28 +2,30 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #333;
-  transition: background-color 0.3s ease;
-  margin: 0;
-  padding: 0;
+  
 }
 
+
 .container {
-  max-width: 1000px; /* Aumentei o valor para melhor ocupação */
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #444;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
+
 
 h1 {
   color: #f0f0f0;
-  font-size: 2.5rem; /* Aumentei o tamanho do título */
+
 }
 
+
 button {
-  padding: 15px 30px; /* Aumentei o botão */
-  font-size: 18px; /* Aumentei a fonte */
+  padding: 10px 20px;
+  font-size: 16px;
   background-color: #4CAF50;
   color: #fff;
   border: none;
@@ -44,62 +46,74 @@ button:hover {
 }
 
 .weather-card {
-  width: 240px; /* Aumentei o tamanho dos cartões */
-  padding: 30px; /* Aumentei o padding */
-  margin: 15px; /* Aumentei o espaçamento entre cartões */
-  font-size: 1.8rem; /* Aumentei o tamanho da fonte */
+  width: 200px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 36px;
   font-weight: bold;
   color: #bbb;
   background-color: #666;
-  border-radius: 10px; /* Arredondei mais os cantos */
+  border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
+
 }
 
+
 .weather-card i {
-  font-size: 60px; /* Aumentei o ícone */
-  margin-bottom: 15px;
+  font-size: 48px;
+  margin-bottom: 10px;
   color: #f0f0f0;
+
+
 }
 
 .weather-card-header {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.4rem; /* Ajustei o tamanho */
+  align-items: center; /* Alinha verticalmente ao centro */
+  gap: 10px; /* Espaçamento entre o ícone e o texto */
+  font-size: 22px;
 }
+
+
 
 .location-time {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 14px;
   color: #bbb;
   transition: color 0.3s ease;
 }
 
-/* Relógio digital maior */
+/* Estilos para o relógio digital */
 #digitalClock {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 5rem; /* Aumentei o tamanho do relógio */
-  color: #00FFFF;
-  letter-spacing: 5px;
-  text-shadow: 0 0 10px #00FFFF;
+  font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+  font-size: 4em;  /* Tamanho da fonte */
+  color: #00FFFF; /* Cor ciano brilhante */
+  letter-spacing: 5px; /* Espaçamento entre as letras */
+  text-shadow: 0 0 10px #00FFFF; /* Sombra de texto */
+  
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 20px; 
 }
 
-/* Ajustes para telas menores */
-@media only screen and (max-width: 768px) {
+/* Estilos para telas menores, como o display do Raspberry Pi */
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 100%; /* Ocupa toda a largura da tela em dispositivos pequenos */
+    padding: 10px; /* Ajusta o padding para evitar margens grandes */
+  }
+  
+  .weather-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas em telas pequenas */
+    gap: 15px; /* Espaçamento entre os cards */
+  }
+  
   .weather-card {
-    width: 100%; /* Cartões ocupam toda a largura da tela menor */
-    font-size: 1.6rem; /* Fonte levemente menor */
+    width: 100%; /* Cada card ocupa toda a largura da coluna */
+    padding: 20px;
   }
+  
 
-  #digitalClock {
-    font-size: 4rem; /* Relógio um pouco menor em telas pequenas */
-  }
-
-  h1 {
-    font-size: 2rem; /* Tamanho menor para o título */
-  }
 }
