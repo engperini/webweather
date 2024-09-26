@@ -7,7 +7,7 @@ body {
 
 
 .container {
-  max-width: 800px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 20px;
   background-color: #444;
@@ -98,22 +98,8 @@ button:hover {
 }
 
 /* Estilos para telas menores, como o display do Raspberry Pi */
-@media only screen and (max-width: 1024px) {
+@media (max-width: 800px) { /* Ajuste o breakpoint conforme necessário */
   .container {
-    max-width: 100%; /* Ocupa toda a largura da tela em dispositivos pequenos */
-    padding: 10px; /* Ajusta o padding para evitar margens grandes */
+    max-width: 90%; /* Largura máxima em telas maiores (90% da viewport) */
   }
-  
-  .weather-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas em telas pequenas */
-    gap: 15px; /* Espaçamento entre os cards */
-  }
-  
-  .weather-card {
-    width: 100%; /* Cada card ocupa toda a largura da coluna */
-    padding: 20px;
-  }
-  
-
 }
